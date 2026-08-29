@@ -159,7 +159,7 @@ function Index() {
             </Reveal>
 
             <Reveal delay={80} className="mt-14 md:mt-0">
-              <h1 className="display text-[clamp(3.5rem,11vw,8rem)] text-ink">
+              <h1 className="display text-[clamp(2.75rem,7vw,5.5rem)] text-ink">
                 <span className="block">Ritmo</span>
                 <span className="block">Que</span>
                 <span className="block">Funciona</span>
