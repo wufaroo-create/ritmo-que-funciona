@@ -17,7 +17,7 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
-  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
   --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -45,6 +45,9 @@
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
   --color-hairline: var(--hairline);
+  --color-coral: var(--coral);
+  --color-sage: var(--sage);
+  --color-gold: var(--gold);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -66,9 +69,12 @@
   --paper: oklch(0.973 0.008 85);
   --sand: oklch(0.938 0.014 84);
   --stone: oklch(0.9 0.008 80);
-  --ink: oklch(0.215 0.028 264);
-  --ink-soft: oklch(0.47 0.019 260);
-  --hairline: oklch(0.855 0.012 82);
+  --ink: oklch(0.28 0.062 259);
+  --ink-soft: oklch(0.5 0.035 259);
+  --hairline: oklch(0.875 0.012 82);
+  --coral: oklch(0.72 0.13 38);
+  --sage: oklch(0.72 0.045 145);
+  --gold: oklch(0.8 0.11 85);
 
   --background: var(--paper);
   --foreground: var(--ink);
@@ -124,17 +130,28 @@
 
 @utility display {
   font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 0.92;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 0.98;
   text-transform: uppercase;
+}
+
+@utility coral-rule {
+  &::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 2px;
+    margin-top: 0.85rem;
+    background-color: var(--color-coral);
+  }
 }
 
 @utility eyebrow {
   font-family: var(--font-sans);
   font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--color-ink-soft);
 }

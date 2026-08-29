@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import heroPath from "@/assets/hero-path.jpg";
 import { Reveal } from "@/components/Reveal";
 
 export const Route = createFileRoute("/")({
@@ -94,9 +95,12 @@ const STORAGE_KEY = "rotina-produtiva-checklist";
 
 function SectionLabel({ number, children }: { number: string; children: string }) {
   return (
-    <div className="mb-12 flex items-baseline gap-6 md:mb-16">
-      <span className="font-display text-sm font-semibold tracking-tight text-ink-soft">{number}</span>
-      <span className="eyebrow">{children}</span>
+    <div className="mb-12 md:mb-16">
+      <div className="flex items-baseline gap-6">
+        <span className="font-display text-base text-coral">{number}</span>
+        <span className="eyebrow">{children}</span>
+      </div>
+      <span className="mt-4 block h-px w-12 bg-coral" />
     </div>
   );
 }
@@ -146,33 +150,46 @@ function Index() {
   return (
     <main className="min-h-screen bg-background">
       {/* HERO */}
-      <section className="mx-auto max-w-6xl px-6 pt-20 pb-24 md:px-10 md:pt-32 md:pb-40">
-        <Reveal className="flex items-center justify-between border-b border-hairline pb-6">
-          <span className="eyebrow">Guia Prático</span>
-          <span className="eyebrow">Ed. 01</span>
-        </Reveal>
+      <section className="mx-auto max-w-7xl px-6 pt-14 pb-20 md:px-10 md:pt-20 md:pb-32">
+        <div className="grid items-stretch gap-10 border-l-2 border-coral pl-6 md:grid-cols-12 md:pl-10">
+          <div className="flex flex-col justify-between py-6 md:col-span-6 md:py-10">
+            <Reveal>
+              <span className="eyebrow">Rotina Produtiva</span>
+              <span className="mt-3 block h-px w-12 bg-coral" />
+            </Reveal>
 
-        <Reveal delay={80} className="mt-16 md:mt-24">
-          <p className="display text-[clamp(1.5rem,4vw,2.75rem)] text-ink-soft">Rotina Produtiva</p>
-          <h1 className="display mt-4 text-[clamp(4rem,17vw,13rem)] text-ink">
-            <span className="block">Ritmo</span>
-            <span className="block">Que</span>
-            <span className="block">Funciona</span>
-          </h1>
-        </Reveal>
+            <Reveal delay={80} className="mt-14 md:mt-0">
+              <h1 className="display text-[clamp(2.5rem,5.5vw,4.25rem)] text-ink">
+                <span className="block">Ritmo</span>
+                <span className="block">Que</span>
+                <span className="block">Funciona</span>
+              </h1>
+              <span className="mt-8 block h-px w-16 bg-coral" />
+              <p className="mt-8 max-w-md text-base leading-relaxed text-ink-soft md:text-lg">
+                Um sistema prático para organizar prioridades, proteger o foco e sustentar o que
+                importa.
+              </p>
+            </Reveal>
 
-        <div className="mt-16 grid gap-12 border-t border-hairline pt-10 md:mt-24 md:grid-cols-12">
-          <Reveal delay={120} className="md:col-span-7">
-            <p className="max-w-xl text-lg leading-relaxed text-ink-soft md:text-xl">
-              Um sistema prático para organizar prioridades, proteger o foco e sustentar o que
-              importa.
-            </p>
-          </Reveal>
-          <Reveal delay={200} className="md:col-span-5 md:flex md:justify-end">
-            <Cta>Começar agora</Cta>
+            <Reveal delay={180} className="mt-14 md:mt-16">
+              <Cta>Começar agora</Cta>
+              <p className="eyebrow mt-10">Guia Prático</p>
+              <span className="mt-3 block h-px w-12 bg-coral" />
+            </Reveal>
+          </div>
+
+          <Reveal delay={140} className="md:col-span-6">
+            <img
+              src={heroPath}
+              alt="Ilustração de um caminho sinuoso a subir colinas até um sol nascente"
+              width={1200}
+              height={1504}
+              className="h-full w-full object-cover"
+            />
           </Reveal>
         </div>
       </section>
+
 
       {/* PROBLEM */}
       <section className="border-t border-hairline bg-secondary">
