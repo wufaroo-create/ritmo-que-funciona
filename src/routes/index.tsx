@@ -95,7 +95,7 @@ const STORAGE_KEY = "rotina-produtiva-checklist";
 function SectionLabel({ number, children }: { number: string; children: string }) {
   return (
     <div className="mb-12 flex items-baseline gap-6 md:mb-16">
-      <span className="font-display text-sm font-600 tracking-tight text-ink-soft">{number}</span>
+      <span className="font-display text-sm font-semibold tracking-tight text-ink-soft">{number}</span>
       <span className="eyebrow">{children}</span>
     </div>
   );
@@ -109,7 +109,7 @@ function Cta({ children, wide = false }: { children: string; wide?: boolean }) {
         wide ? "h-16 min-w-full text-sm sm:min-w-[22rem]" : "h-14 text-xs"
       }`}
     >
-      <span className="font-600 uppercase tracking-[0.18em]">{children}</span>
+      <span className="font-semibold uppercase tracking-[0.18em]">{children}</span>
       <span className="translate-x-0 transition-transform duration-500 group-hover:translate-x-1.5">
         →
       </span>
@@ -488,7 +488,7 @@ function Index() {
                 href="#checklist"
                 className="group inline-flex h-16 w-full items-center justify-between gap-8 border border-paper/40 px-8 transition-colors duration-500 hover:border-paper hover:bg-paper hover:text-ink sm:w-auto sm:min-w-[24rem]"
               >
-                <span className="text-sm font-600 uppercase tracking-[0.18em]">
+                <span className="text-sm font-semibold uppercase tracking-[0.18em]">
                   Começar a minha rotina
                 </span>
                 <span className="transition-transform duration-500 group-hover:translate-x-1.5">
